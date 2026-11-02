@@ -9,7 +9,7 @@ React + Vite frontend for the Flask API in `../backend`.
 python backend/app.py            # serves http://localhost:5000
 
 # 2. frontend
-cd web
+cd frontend
 npm install
 npm run dev                      # http://localhost:5173
 ```
