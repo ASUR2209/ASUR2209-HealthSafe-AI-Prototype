@@ -806,6 +806,30 @@ def predict_safety_full(ingredients_text, user_profile):
 
     return final
 
+def save_scan_if_member(data, product_name, ingredients_text, result, source):
+    """Save a scan to history when the request names a family member."""
+    family_id = data.get('family_id')
+    member_id = data.get('member_id')
+    if not (family_id and member_id):
+        return
+    try:
+        save_scan(
+            family_id=family_id,
+            member_id=member_id,
+            product_name=product_name,
+            ingredients_text=ingredients_text,
+            verdict=result['final_verdict'],
+            score=result['final_score'],
+            score_label=result['score_label'],
+            flagged_count=result['flagged_count'],
+            conflict_count=result['conflict_count'],
+            flagged_ingredients=result['flagged_ingredients'],
+            source=source
+        )
+    except Exception as save_err:
+        print(f"save_scan error: {save_err}")
+
+
 @app.route('/')
 def home():
     return jsonify({"status": "running", "message": "HealthSafe AI API is live!", "version": "1.0"})
@@ -829,6 +853,7 @@ def scan():
             return jsonify({"error": "Missing user_profile"}), 400
 
         result = predict_safety_full(data['ingredients'], data['user_profile'])
+        save_scan_if_member(data, data.get('product_name') or 'Typed ingredients', data['ingredients'], result, 'text')
         return jsonify({
             "status": "success",
             "verdict": result['final_verdict'],
@@ -838,7 +863,11 @@ def scan():
             "conflict_count": result['conflict_count'],
             "flagged_ingredients": result['flagged_ingredients'],
             "medication_conflicts": result['medication_conflicts'],
-            "explanation": result['explanation']
+            "explanation": result['explanation'],
+            "layer2_prediction": result['layer2_prediction'],
+            "layer2_confidence": result['layer2_confidence'],
+            "ml_score": result['ml_score'],
+            "proportion_score": result['proportion_score']
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -891,7 +920,11 @@ def scan_image():
             "conflict_count": result['conflict_count'],
             "flagged_ingredients": result['flagged_ingredients'],
             "medication_conflicts": result['medication_conflicts'],
-            "explanation": result['explanation']
+            "explanation": result['explanation'],
+            "layer2_prediction": result['layer2_prediction'],
+            "layer2_confidence": result['layer2_confidence'],
+            "ml_score": result['ml_score'],
+            "proportion_score": result['proportion_score']
         })
 
     except Exception as e:
@@ -961,6 +994,7 @@ def ocr_analyze():
             ingredients_text,
             user_profile
         )
+        save_scan_if_member(data, 'Label photo', ingredients_text, result, 'photo')
 
         return jsonify({
             "success": True,
@@ -1061,7 +1095,11 @@ def scan_barcode():
             "conflict_count": result['conflict_count'],
             "flagged_ingredients": result['flagged_ingredients'],
             "medication_conflicts": result['medication_conflicts'],
-            "explanation": result['explanation']
+            "explanation": result['explanation'],
+            "layer2_prediction": result['layer2_prediction'],
+            "layer2_confidence": result['layer2_confidence'],
+            "ml_score": result['ml_score'],
+            "proportion_score": result['proportion_score']
         })
 
     except Exception as e:
