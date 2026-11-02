@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ApiError, checkHealth, scanBarcode, scanPhoto, scanText, type Profile, type Result } from "./api";
+import { ApiError, checkHealth, hasApi, needsApi, scanBarcode, scanPhoto, scanText, type Profile, type Result } from "./api";
 import { Composer } from "./Composer";
 import { Findings } from "./Findings";
 import { Household, type Session } from "./Household";
@@ -66,7 +66,7 @@ export default function App() {
     } catch (e) {
       const err = e as ApiError;
       setError({
-        msg: err.offline ? "Photo and barcode scans need the Flask API. Start it with: python backend/app.py" : err.message,
+        msg: err.offline ? needsApi("Photo and barcode scans") : err.message,
         tip: err.tip,
       });
     } finally {
@@ -111,6 +111,12 @@ export default function App() {
               Rules for 30 conditions and 40+ medicines run first, an XGBoost classifier scores the whole list, and an ingredient heuristic
               weighs each item. The result shows you where each signal came from.
             </p>
+            {!hasApi && (
+              <p className="demo-note">
+                <b>Hosted demo.</b> Typed scans run on a reduced rule set in your browser. The XGBoost model, label OCR, barcode
+                lookup and household accounts need the Python backend, so run the project locally for the full app.
+              </p>
+            )}
           </div>
 
           <ProfilePanel profile={profile} onChange={setProfile} />

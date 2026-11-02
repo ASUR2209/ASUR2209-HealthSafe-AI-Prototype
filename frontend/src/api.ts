@@ -1,6 +1,15 @@
 import { DEMO_MED_CONFLICTS, DEMO_RULES, fixText } from "./data";
 
-const BASE: string = import.meta.env.VITE_API_URL ?? "/api";
+// Dev uses Vite's /api proxy. A production build only talks to an API when
+// VITE_API_URL is set at build time; otherwise (e.g. GitHub Pages) it runs offline.
+const BASE: string | null = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "/api" : null);
+export const hasApi = BASE !== null;
+
+// What to tell people when a feature needs the backend that isn't reachable.
+export const needsApi = (what: string) =>
+  hasApi
+    ? `${what} need the Flask API. Start it with: python backend/app.py`
+    : `${what} need the Python backend, which this hosted demo doesn't include. Run the project locally to use them.`;
 
 export type Risk = "HIGH" | "MEDIUM" | "LOW";
 export type Verdict = "Safe" | "Moderate" | "Unsafe";
@@ -71,6 +80,7 @@ export class ApiError extends Error {
 }
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
+  if (BASE === null) throw new ApiError("This deployment has no HealthSafe API.", true);
   let res: Response;
   try {
     res = await fetch(BASE + path, {

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { family, type Member, type Profile } from "./api";
+import { family, needsApi, type Member, type Profile } from "./api";
 import { pretty } from "./data";
 import { Tabs, announce, tabPanelProps } from "./a11y";
 import { ConditionPicker, MedicinePicker } from "./ProfilePanel";
@@ -41,7 +41,7 @@ function Auth({ online, onSession }: { online: boolean; onSession: (s: Session) 
         onSession({ familyId: r.family_id, headName: r.head_name });
       }
     } catch (e: any) {
-      setErr(e.offline ? "The household needs the Flask API running. Start it, then try again." : e.message);
+      setErr(e.offline ? needsApi("Household accounts") : e.message);
     } finally {
       setBusy(false);
     }
@@ -96,7 +96,7 @@ function Auth({ online, onSession }: { online: boolean; onSession: (s: Session) 
             {err}
           </p>
         )}
-        {!online && !err && <p className="muted">API offline — start the Flask backend to use the household.</p>}
+        {!online && !err && <p className="muted">{needsApi("Household accounts")}</p>}
         <button className="run" disabled={busy}>
           {busy ? <span className="dots">One moment</span> : mode === "login" ? "Sign in" : "Create household"}
         </button>
