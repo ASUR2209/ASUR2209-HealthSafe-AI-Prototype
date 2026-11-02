@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { recommend, type Alternative, type Profile, type Result } from "./api";
+import { needsApi, recommend, type Alternative, type Profile, type Result } from "./api";
 import { pretty } from "./data";
 
 const tone = (r: string) => (r === "HIGH" ? "unsafe" : r === "MEDIUM" ? "mod" : "safe");
@@ -26,7 +26,7 @@ export function Findings({ result, profile }: { result: Result; profile: Profile
       const r = await recommend(result, profile);
       setAlts({ state: "done", items: r.alternatives ?? [], msg: r.error });
     } catch (e: any) {
-      setAlts({ state: "error", items: [], msg: e.offline ? "Alternatives need the Flask API running." : e.message });
+      setAlts({ state: "error", items: [], msg: e.offline ? needsApi("Alternatives") : e.message });
     }
   };
 

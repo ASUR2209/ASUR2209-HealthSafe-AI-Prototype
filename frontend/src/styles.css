@@ -646,3 +646,5 @@ main:focus { outline: none; }
   .md-row { flex-direction: column; }
   .md-age { width: 100%; }
 }
+
+.intro .demo-note { grid-column: 1 / -1; margin: 0; padding: 10px 14px; border-radius: 12px; background: var(--mod-bg); color: var(--ink); font-size: 0.875rem; max-width: none; }
