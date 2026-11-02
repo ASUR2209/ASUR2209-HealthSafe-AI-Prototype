@@ -62,3 +62,24 @@ build/
 # ── Logs ─────────────────────────────────────────────────────
 *.log
 logs/
+
+
+
+# HealthSafe project exclusions
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+*.csv
+*.csv.gz
+node_modules/
+.venv/
+venv/
+*.backup
+*.pre_*_backup
+
+# Include only the current model
+!ml/
+ml/*.pkl
+!ml/healthsafe_model_v6.pkl
