@@ -83,3 +83,6 @@ venv/
 !ml/
 ml/*.pkl
 !ml/healthsafe_model_v6.pkl
+
+# TypeScript build cache
+*.tsbuildinfo
