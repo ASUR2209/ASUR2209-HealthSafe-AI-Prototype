@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ApiError, checkHealth, hasApi, needsApi, scanBarcode, scanPhoto, scanText, type Profile, type Result } from "./api";
+import { ApiError, checkHealth, inBrowser, needsApi, scanBarcode, scanPhoto, scanText, type Profile, type Result } from "./api";
 import { Composer } from "./Composer";
 import { Findings } from "./Findings";
 import { Household, type Session } from "./Household";
@@ -97,7 +97,7 @@ export default function App() {
         </nav>
         <span className={`status ${online ? "is-on" : online === false ? "is-off" : ""}`} role="status">
           <i aria-hidden />
-          {online == null ? "Checking API" : online ? "Model online" : "Demo mode"}
+          {inBrowser ? "Model in browser" : online == null ? "Checking API" : online ? "Model online" : "Demo mode"}
         </span>
       </header>
 
@@ -111,10 +111,10 @@ export default function App() {
               Rules for 30 conditions and 40+ medicines run first, an XGBoost classifier scores the whole list, and an ingredient heuristic
               weighs each item. The result shows you where each signal came from.
             </p>
-            {!hasApi && (
+            {inBrowser && (
               <p className="demo-note">
-                <b>Hosted demo.</b> Typed scans run on a reduced rule set in your browser. The XGBoost model, label OCR, barcode
-                lookup and household accounts need the Python backend, so run the project locally for the full app.
+                Everything runs in your browser: the XGBoost model, the rule engine and label OCR. Only barcode and
+                alternative lookups go out, to Open Food Facts.
               </p>
             )}
           </div>

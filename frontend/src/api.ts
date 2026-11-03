@@ -1,15 +1,14 @@
 import { DEMO_MED_CONFLICTS, DEMO_RULES, fixText } from "./data";
 
-// Dev uses Vite's /api proxy. A production build only talks to an API when
-// VITE_API_URL is set at build time; otherwise (e.g. GitHub Pages) it runs offline.
+// Dev uses Vite's /api proxy to Flask. A production build talks to VITE_API_URL when it
+// is set at build time; otherwise (e.g. GitHub Pages) the whole backend runs in the
+// browser (src/engine), with the same model and rules.
 const BASE: string | null = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "/api" : null);
 export const hasApi = BASE !== null;
+export const inBrowser = !hasApi;
 
-// What to tell people when a feature needs the backend that isn't reachable.
-export const needsApi = (what: string) =>
-  hasApi
-    ? `${what} need the Flask API. Start it with: python backend/app.py`
-    : `${what} need the Python backend, which this hosted demo doesn't include. Run the project locally to use them.`;
+// What to tell people when a feature needs the Flask API and it isn't running.
+export const needsApi = (what: string) => `${what} need the Flask API. Start it with: python backend/app.py`;
 
 export type Risk = "HIGH" | "MEDIUM" | "LOW";
 export type Verdict = "Safe" | "Moderate" | "Unsafe";
@@ -80,7 +79,15 @@ export class ApiError extends Error {
 }
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
-  if (BASE === null) throw new ApiError("This deployment has no HealthSafe API.", true);
+  if (BASE === null) {
+    // Loaded on demand so the Flask-backed build never ships the engine.
+    const { localFetch } = await import("./engine/local");
+    const { status, data } = await localFetch(path, init);
+    if (status >= 400 || data.success === false) {
+      throw new ApiError(fixText(data.error) || `Request failed (${status})`, false, data.tip ?? data.suggestion);
+    }
+    return data as T;
+  }
   let res: Response;
   try {
     res = await fetch(BASE + path, {

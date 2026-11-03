@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { family, needsApi, type Member, type Profile } from "./api";
+import { family, inBrowser, needsApi, type Member, type Profile } from "./api";
 import { pretty } from "./data";
 import { Tabs, announce, tabPanelProps } from "./a11y";
 import { ConditionPicker, MedicinePicker } from "./ProfilePanel";
@@ -96,7 +96,11 @@ function Auth({ online, onSession }: { online: boolean; onSession: (s: Session) 
             {err}
           </p>
         )}
-        {!online && !err && <p className="muted">{needsApi("Household accounts")}</p>}
+        {inBrowser ? (
+          <p className="muted">Accounts and scan history are saved in this browser only.</p>
+        ) : (
+          !online && !err && <p className="muted">{needsApi("Household accounts")}</p>
+        )}
         <button className="run" disabled={busy}>
           {busy ? <span className="dots">One moment</span> : mode === "login" ? "Sign in" : "Create household"}
         </button>
