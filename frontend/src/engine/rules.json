@@ -1,0 +1,1120 @@
+{
+ "INGREDIENT_RULES": {
+  "sugar": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes",
+    "pcos"
+   ],
+   "reason": "Direct blood glucose spike."
+  },
+  "invert sugar": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "Rapidly raises blood glucose."
+  },
+  "high fructose corn syrup": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "Rapidly raises blood glucose."
+  },
+  "corn syrup": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "High glycemic index."
+  },
+  "dextrose": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "Direct blood sugar raiser."
+  },
+  "maltodextrin": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "Higher GI than table sugar."
+  },
+  "glucose": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "Direct blood glucose spike."
+  },
+  "fructose": {
+   "risk": "HIGH",
+   "conditions": [
+    "gout",
+    "high_uric_acid"
+   ],
+   "reason": "Fructose metabolism produces uric acid."
+  },
+  "sucrose": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "Table sugar â€” raises blood glucose."
+  },
+  "honey": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "High glycemic index despite being natural."
+  },
+  "jaggery": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "High sugar content despite being natural."
+  },
+  "maida": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes",
+    "pcos"
+   ],
+   "reason": "Refined flour â€” very high glycemic index."
+  },
+  "refined wheat flour": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes",
+    "pcos"
+   ],
+   "reason": "Refined flour spikes blood sugar fast."
+  },
+  "refined flour": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes",
+    "pcos"
+   ],
+   "reason": "High GI â€” causes rapid glucose rise."
+  },
+  "enriched flour": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "diabetes"
+   ],
+   "reason": "Spikes blood sugar fast."
+  },
+  "white rice": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "High glycemic index."
+  },
+  "condensed milk": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "Very high sugar content."
+  },
+  "chocolate": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "diabetes"
+   ],
+   "reason": "High sugar content unless dark chocolate."
+  },
+  "caramel": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes",
+    "prediabetes"
+   ],
+   "reason": "Concentrated sugar."
+  },
+  "treacle": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes"
+   ],
+   "reason": "High sugar content."
+  },
+  "molasses": {
+   "risk": "HIGH",
+   "conditions": [
+    "diabetes"
+   ],
+   "reason": "High sugar content."
+  },
+  "salt": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension",
+    "kidney_disease"
+   ],
+   "reason": "Primary sodium source â€” raises blood pressure."
+  },
+  "sodium": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension",
+    "kidney_disease"
+   ],
+   "reason": "Raises blood pressure."
+  },
+  "msg": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension"
+   ],
+   "reason": "High sodium content."
+  },
+  "monosodium glutamate": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension"
+   ],
+   "reason": "High sodium â€” raises blood pressure."
+  },
+  "ajinomoto": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension"
+   ],
+   "reason": "MSG â€” high sodium content."
+  },
+  "sodium benzoate": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension",
+    "kidney_disease"
+   ],
+   "reason": "Sodium-based preservative."
+  },
+  "sodium nitrate": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension",
+    "heart_disease"
+   ],
+   "reason": "Raises blood pressure, linked to heart disease."
+  },
+  "sodium nitrite": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension",
+    "heart_disease"
+   ],
+   "reason": "Processed meat preservative â€” cardiovascular risk."
+  },
+  "baking soda": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypertension",
+    "kidney_disease"
+   ],
+   "reason": "Contains sodium bicarbonate."
+  },
+  "sodium bicarbonate": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypertension",
+    "kidney_disease"
+   ],
+   "reason": "High sodium content."
+  },
+  "disodium": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension",
+    "kidney_disease"
+   ],
+   "reason": "Sodium-based additive."
+  },
+  "caffeine": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypertension",
+    "heart_arrhythmia"
+   ],
+   "reason": "Raises blood pressure temporarily."
+  },
+  "iodised salt": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension",
+    "kidney_disease"
+   ],
+   "reason": "Primary sodium source."
+  },
+  "rock salt": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension",
+    "kidney_disease"
+   ],
+   "reason": "High sodium content."
+  },
+  "palm oil": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "High saturated fat â€” raises LDL cholesterol."
+  },
+  "palmolein": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "Palm oil derivative â€” high saturated fat."
+  },
+  "palm kernel": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "Very high saturated fat content."
+  },
+  "fractionated fat": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "Processed fat â€” high saturated fat content."
+  },
+  "fractionated palm": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "Processed palm fat â€” raises LDL."
+  },
+  "vanaspati": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "Partially hydrogenated vegetable fat â€” contains trans fats."
+  },
+  "hydrogenated": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "Trans fat â€” significantly raises cardiovascular risk."
+  },
+  "partially hydrogenated": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease"
+   ],
+   "reason": "Artificial trans fat â€” worst for heart health."
+  },
+  "shortening": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "High trans and saturated fat."
+  },
+  "lard": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "Animal fat â€” high saturated fat."
+  },
+  "coconut oil": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "High saturated fat â€” consume in moderation."
+  },
+  "cream": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "High saturated fat content."
+  },
+  "butter": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "High saturated fat and cholesterol."
+  },
+  "ghee": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "High saturated fat â€” moderation needed."
+  },
+  "interesterified": {
+   "risk": "HIGH",
+   "conditions": [
+    "heart_disease",
+    "high_cholesterol"
+   ],
+   "reason": "Processed fat linked to cardiovascular risk."
+  },
+  "potassium chloride": {
+   "risk": "HIGH",
+   "conditions": [
+    "kidney_disease"
+   ],
+   "reason": "Kidneys cannot remove excess potassium â€” dangerous buildup."
+  },
+  "potassium": {
+   "risk": "HIGH",
+   "conditions": [
+    "kidney_disease"
+   ],
+   "reason": "High potassium is dangerous for kidney patients."
+  },
+  "phosphate": {
+   "risk": "HIGH",
+   "conditions": [
+    "kidney_disease"
+   ],
+   "reason": "Kidneys cannot filter phosphates â€” bone disease risk."
+  },
+  "phosphoric acid": {
+   "risk": "HIGH",
+   "conditions": [
+    "kidney_disease"
+   ],
+   "reason": "High phosphorus â€” dangerous for kidney patients."
+  },
+  "calcium phosphate": {
+   "risk": "HIGH",
+   "conditions": [
+    "kidney_disease"
+   ],
+   "reason": "Phosphate additive â€” dangerous for kidney disease."
+  },
+  "sodium phosphate": {
+   "risk": "HIGH",
+   "conditions": [
+    "kidney_disease",
+    "hypertension"
+   ],
+   "reason": "Phosphate + sodium â€” double risk for kidney patients."
+  },
+  "potassium sorbate": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "kidney_disease"
+   ],
+   "reason": "Potassium-based preservative."
+  },
+  "oxalic acid": {
+   "risk": "HIGH",
+   "conditions": [
+    "kidney_disease",
+    "kidney_stones"
+   ],
+   "reason": "Forms kidney stones â€” avoid completely."
+  },
+  "soy": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypothyroidism"
+   ],
+   "reason": "Interferes with thyroid medication absorption."
+  },
+  "soybean": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypothyroidism"
+   ],
+   "reason": "Blocks thyroid hormone absorption."
+  },
+  "soy lecithin": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypothyroidism"
+   ],
+   "reason": "Soy-derived â€” thyroid absorption risk."
+  },
+  "soy protein": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypothyroidism"
+   ],
+   "reason": "Soy compound â€” interferes with levothyroxine."
+  },
+  "tofu": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypothyroidism"
+   ],
+   "reason": "Soy-based â€” blocks thyroid hormone absorption."
+  },
+  "iodine": {
+   "risk": "HIGH",
+   "conditions": [
+    "hyperthyroidism"
+   ],
+   "reason": "Excess iodine worsens hyperthyroidism."
+  },
+  "seaweed": {
+   "risk": "HIGH",
+   "conditions": [
+    "hyperthyroidism",
+    "hypothyroidism"
+   ],
+   "reason": "Very high iodine content â€” disrupts thyroid function."
+  },
+  "kelp": {
+   "risk": "HIGH",
+   "conditions": [
+    "hyperthyroidism",
+    "hypothyroidism"
+   ],
+   "reason": "Extremely high iodine â€” dangerous for thyroid patients."
+  },
+  "flaxseed": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypothyroidism"
+   ],
+   "reason": "Goitrogenic â€” may reduce thyroid hormone production."
+  },
+  "millet": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "hypothyroidism"
+   ],
+   "reason": "Goitrogenic compound â€” interferes with thyroid function."
+  },
+  "alcohol": {
+   "risk": "HIGH",
+   "conditions": [
+    "liver_disease",
+    "fatty_liver"
+   ],
+   "reason": "Directly toxic to liver cells."
+  },
+  "artificial colour": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "liver_disease"
+   ],
+   "reason": "Synthetic dyes processed by liver."
+  },
+  "tartrazine": {
+   "risk": "HIGH",
+   "conditions": [
+    "asthma"
+   ],
+   "reason": "Artificial yellow dye â€” known asthma trigger."
+  },
+  "artificial sweetener": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "pcos"
+   ],
+   "reason": "May disrupt insulin sensitivity."
+  },
+  "aspartame": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "pcos"
+   ],
+   "reason": "Artificial sweetener â€” insulin disruption risk."
+  },
+  "sucralose": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "pcos",
+    "diabetes"
+   ],
+   "reason": "May affect gut microbiome and insulin response."
+  },
+  "trans fat": {
+   "risk": "HIGH",
+   "conditions": [
+    "pcos",
+    "heart_disease"
+   ],
+   "reason": "Worsens insulin resistance and inflammation."
+  },
+  "refined oil": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "pcos"
+   ],
+   "reason": "Pro-inflammatory â€” worsens PCOS symptoms."
+  },
+  "peanut": {
+   "risk": "HIGH",
+   "conditions": [
+    "peanut_allergy"
+   ],
+   "reason": "Severe anaphylaxis risk."
+  },
+  "groundnut": {
+   "risk": "HIGH",
+   "conditions": [
+    "peanut_allergy"
+   ],
+   "reason": "Peanut â€” severe anaphylaxis risk."
+  },
+  "wheat": {
+   "risk": "HIGH",
+   "conditions": [
+    "celiac_disease",
+    "wheat_allergy"
+   ],
+   "reason": "Contains gluten â€” triggers immune attack."
+  },
+  "gluten": {
+   "risk": "HIGH",
+   "conditions": [
+    "celiac_disease"
+   ],
+   "reason": "Triggers autoimmune response in celiac disease."
+  },
+  "barley": {
+   "risk": "HIGH",
+   "conditions": [
+    "celiac_disease"
+   ],
+   "reason": "Contains gluten."
+  },
+  "rye": {
+   "risk": "HIGH",
+   "conditions": [
+    "celiac_disease"
+   ],
+   "reason": "Contains gluten."
+  },
+  "oats": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "celiac_disease"
+   ],
+   "reason": "Often cross-contaminated with gluten."
+  },
+  "milk": {
+   "risk": "HIGH",
+   "conditions": [
+    "lactose_intolerance",
+    "dairy_allergy"
+   ],
+   "reason": "Contains lactose and dairy proteins."
+  },
+  "lactose": {
+   "risk": "HIGH",
+   "conditions": [
+    "lactose_intolerance"
+   ],
+   "reason": "Causes digestive issues â€” bloating and cramping."
+  },
+  "whey": {
+   "risk": "HIGH",
+   "conditions": [
+    "dairy_allergy"
+   ],
+   "reason": "Dairy protein â€” triggers allergic reaction."
+  },
+  "casein": {
+   "risk": "HIGH",
+   "conditions": [
+    "dairy_allergy"
+   ],
+   "reason": "Dairy protein â€” allergic reaction risk."
+  },
+  "egg": {
+   "risk": "HIGH",
+   "conditions": [
+    "egg_allergy"
+   ],
+   "reason": "Triggers allergic reaction in egg allergy."
+  },
+  "albumin": {
+   "risk": "HIGH",
+   "conditions": [
+    "egg_allergy"
+   ],
+   "reason": "Egg white protein â€” allergen."
+  },
+  "sesame": {
+   "risk": "HIGH",
+   "conditions": [
+    "sesame_allergy"
+   ],
+   "reason": "Triggers allergic reaction."
+  },
+  "til": {
+   "risk": "HIGH",
+   "conditions": [
+    "sesame_allergy"
+   ],
+   "reason": "Sesame seeds â€” allergen."
+  },
+  "tree nut": {
+   "risk": "HIGH",
+   "conditions": [
+    "tree_nut_allergy"
+   ],
+   "reason": "Severe allergic reaction risk."
+  },
+  "almond": {
+   "risk": "HIGH",
+   "conditions": [
+    "tree_nut_allergy"
+   ],
+   "reason": "Tree nut â€” anaphylaxis risk."
+  },
+  "cashew": {
+   "risk": "HIGH",
+   "conditions": [
+    "tree_nut_allergy"
+   ],
+   "reason": "Tree nut â€” anaphylaxis risk."
+  },
+  "walnut": {
+   "risk": "HIGH",
+   "conditions": [
+    "tree_nut_allergy"
+   ],
+   "reason": "Tree nut â€” anaphylaxis risk."
+  },
+  "pistachio": {
+   "risk": "HIGH",
+   "conditions": [
+    "tree_nut_allergy"
+   ],
+   "reason": "Tree nut â€” anaphylaxis risk."
+  },
+  "fish": {
+   "risk": "HIGH",
+   "conditions": [
+    "fish_allergy"
+   ],
+   "reason": "Triggers allergic reaction."
+  },
+  "shellfish": {
+   "risk": "HIGH",
+   "conditions": [
+    "shellfish_allergy"
+   ],
+   "reason": "Severe allergic reaction risk."
+  },
+  "shrimp": {
+   "risk": "HIGH",
+   "conditions": [
+    "shellfish_allergy"
+   ],
+   "reason": "Shellfish â€” anaphylaxis risk."
+  },
+  "prawn": {
+   "risk": "HIGH",
+   "conditions": [
+    "shellfish_allergy"
+   ],
+   "reason": "Shellfish â€” anaphylaxis risk."
+  },
+  "mustard": {
+   "risk": "HIGH",
+   "conditions": [
+    "mustard_allergy"
+   ],
+   "reason": "Triggers allergic reaction."
+  },
+  "sulphite": {
+   "risk": "HIGH",
+   "conditions": [
+    "sulphite_sensitivity",
+    "asthma"
+   ],
+   "reason": "Triggers asthma attacks and allergic reactions."
+  },
+  "sulphur dioxide": {
+   "risk": "HIGH",
+   "conditions": [
+    "sulphite_sensitivity",
+    "asthma"
+   ],
+   "reason": "Preservative â€” triggers asthma."
+  },
+  "e102": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "asthma",
+    "hyperactivity"
+   ],
+   "reason": "Tartrazine â€” artificial yellow dye, triggers asthma."
+  },
+  "e110": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "asthma",
+    "hyperactivity"
+   ],
+   "reason": "Sunset yellow â€” artificial dye, hyperactivity in children."
+  },
+  "e122": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "asthma",
+    "hyperactivity"
+   ],
+   "reason": "Carmoisine â€” artificial red dye."
+  },
+  "e124": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "asthma",
+    "hyperactivity"
+   ],
+   "reason": "Ponceau 4R â€” artificial red dye, asthma trigger."
+  },
+  "e129": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "asthma",
+    "hyperactivity"
+   ],
+   "reason": "Allura red â€” linked to hyperactivity in children."
+  },
+  "e211": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "asthma",
+    "liver_disease"
+   ],
+   "reason": "Sodium benzoate â€” preservative, asthma trigger."
+  },
+  "e220": {
+   "risk": "HIGH",
+   "conditions": [
+    "asthma",
+    "sulphite_sensitivity"
+   ],
+   "reason": "Sulphur dioxide â€” strong asthma trigger."
+  },
+  "e250": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension",
+    "heart_disease"
+   ],
+   "reason": "Sodium nitrite â€” processed meat preservative, cardiovascular risk."
+  },
+  "e621": {
+   "risk": "HIGH",
+   "conditions": [
+    "hypertension"
+   ],
+   "reason": "MSG â€” raises blood pressure."
+  },
+  "e951": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "pcos",
+    "diabetes"
+   ],
+   "reason": "Aspartame â€” artificial sweetener, insulin disruption."
+  },
+  "e955": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "pcos",
+    "diabetes"
+   ],
+   "reason": "Sucralose â€” may affect insulin response."
+  },
+  "benzoate": {
+   "risk": "MEDIUM",
+   "conditions": [
+    "asthma"
+   ],
+   "reason": "Preservative â€” triggers asthma in sensitive individuals."
+  },
+  "metabisulphite": {
+   "risk": "HIGH",
+   "conditions": [
+    "asthma",
+    "sulphite_sensitivity"
+   ],
+   "reason": "Sulphite compound â€” strong asthma trigger."
+  },
+  "bisulphite": {
+   "risk": "HIGH",
+   "conditions": [
+    "asthma",
+    "sulphite_sensitivity"
+   ],
+   "reason": "Sulphite preservative â€” asthma trigger."
+  },
+  "yeast extract": {
+   "risk": "HIGH",
+   "conditions": [
+    "gout",
+    "high_uric_acid"
+   ],
+   "reason": "High purine content â€” raises uric acid levels."
+  },
+  "anchovies": {
+   "risk": "HIGH",
+   "conditions": [
+    "gout",
+    "high_uric_acid"
+   ],
+   "reason": "High purine seafood â€” triggers gout attacks."
+  },
+  "sardine": {
+   "risk": "HIGH",
+   "conditions": [
+    "gout",
+    "high_uric_acid"
+   ],
+   "reason": "High purine â€” raises uric acid."
+  }
+ },
+ "MEDICATION_CONFLICTS": {
+  "metformin": {
+   "alcohol": "HIGH â€” alcohol + metformin causes dangerous lactic acidosis",
+   "sugar": "MEDIUM â€” directly counteracts blood glucose control",
+   "refined flour": "MEDIUM â€” raises blood glucose, reduces metformin effectiveness",
+   "maida": "MEDIUM â€” high GI flour counteracts metformin"
+  },
+  "glipizide": {
+   "alcohol": "HIGH â€” severe hypoglycemia risk",
+   "sugar": "HIGH â€” directly counteracts glipizide glucose control",
+   "caffeine": "MEDIUM â€” caffeine raises blood glucose unpredictably"
+  },
+  "glimepiride": {
+   "alcohol": "HIGH â€” dangerous hypoglycemia with sulfonylureas",
+   "sugar": "HIGH â€” counteracts medication directly"
+  },
+  "glyburide": {
+   "alcohol": "HIGH â€” severe hypoglycemia and flushing reaction",
+   "sugar": "HIGH â€” counteracts glucose control"
+  },
+  "insulin": {
+   "alcohol": "HIGH â€” alcohol causes dangerous hypoglycemia with insulin",
+   "sugar": "HIGH â€” directly raises blood glucose, counteracts insulin",
+   "glucose": "HIGH â€” directly raises blood glucose",
+   "fructose": "MEDIUM â€” raises blood glucose unpredictably",
+   "maida": "MEDIUM â€” high GI â€” unpredictable glucose spike"
+  },
+  "sitagliptin": {
+   "sugar": "MEDIUM â€” counteracts blood glucose management",
+   "refined flour": "MEDIUM â€” high GI reduces drug effectiveness"
+  },
+  "empagliflozin": {
+   "sugar": "MEDIUM â€” counteracts SGLT2 inhibitor glucose control",
+   "alcohol": "MEDIUM â€” dehydration and blood pressure drop risk"
+  },
+  "dapagliflozin": {
+   "sugar": "MEDIUM â€” counteracts glucose control",
+   "alcohol": "MEDIUM â€” dehydration risk with SGLT2 inhibitors"
+  },
+  "lisinopril": {
+   "potassium": "HIGH â€” ACE inhibitors + potassium causes dangerous hyperkalemia",
+   "potassium chloride": "HIGH â€” dangerous potassium buildup",
+   "salt substitute": "HIGH â€” most salt substitutes contain potassium chloride",
+   "alcohol": "MEDIUM â€” excessive blood pressure drop"
+  },
+  "enalapril": {
+   "potassium": "HIGH â€” hyperkalemia risk with ACE inhibitors",
+   "potassium chloride": "HIGH â€” dangerous potassium accumulation",
+   "alcohol": "MEDIUM â€” blood pressure drop risk"
+  },
+  "losartan": {
+   "potassium": "HIGH â€” ARBs + potassium causes hyperkalemia",
+   "potassium chloride": "HIGH â€” dangerous potassium buildup",
+   "grapefruit": "MEDIUM â€” may alter losartan metabolism",
+   "alcohol": "MEDIUM â€” enhanced blood pressure lowering effect"
+  },
+  "telmisartan": {
+   "potassium": "HIGH â€” hyperkalemia risk",
+   "alcohol": "MEDIUM â€” excessive blood pressure drop"
+  },
+  "amlodipine": {
+   "grapefruit": "HIGH â€” grapefruit increases amlodipine levels dangerously",
+   "alcohol": "MEDIUM â€” enhanced blood pressure lowering, dizziness"
+  },
+  "nifedipine": {
+   "grapefruit": "HIGH â€” dramatically increases nifedipine blood levels",
+   "alcohol": "MEDIUM â€” excessive blood pressure lowering"
+  },
+  "metoprolol": {
+   "caffeine": "MEDIUM â€” caffeine counteracts beta blocker effectiveness",
+   "alcohol": "MEDIUM â€” enhanced sedation and blood pressure drop"
+  },
+  "atenolol": {
+   "caffeine": "MEDIUM â€” counteracts beta blocker heart rate control",
+   "alcohol": "MEDIUM â€” blood pressure drop risk",
+   "calcium": "MEDIUM â€” calcium reduces atenolol absorption"
+  },
+  "propranolol": {
+   "caffeine": "MEDIUM â€” counteracts beta blocker",
+   "alcohol": "HIGH â€” dangerous blood pressure and heart rate drop"
+  },
+  "hydrochlorothiazide": {
+   "alcohol": "MEDIUM â€” excessive blood pressure lowering",
+   "calcium": "MEDIUM â€” thiazides increase calcium absorption â€” risk of hypercalcemia",
+   "sodium": "MEDIUM â€” high sodium counteracts diuretic effectiveness"
+  },
+  "furosemide": {
+   "sodium": "MEDIUM â€” high sodium counteracts diuretic",
+   "alcohol": "MEDIUM â€” dehydration and blood pressure drop",
+   "potassium": "MEDIUM â€” furosemide depletes potassium â€” monitor levels"
+  },
+  "statins": {
+   "grapefruit": "HIGH â€” dramatically increases statin blood levels, toxicity risk",
+   "red yeast rice": "HIGH â€” contains natural statin â€” dangerous combined dose",
+   "alcohol": "MEDIUM â€” increases liver damage risk with statins"
+  },
+  "atorvastatin": {
+   "grapefruit": "HIGH â€” dramatically raises atorvastatin blood levels",
+   "alcohol": "MEDIUM â€” liver damage risk",
+   "red yeast rice": "HIGH â€” dangerous statin overdose effect"
+  },
+  "rosuvastatin": {
+   "alcohol": "MEDIUM â€” liver damage risk",
+   "antacids": "MEDIUM â€” aluminium antacids reduce rosuvastatin absorption"
+  },
+  "simvastatin": {
+   "grapefruit": "HIGH â€” grapefruit juice dramatically increases simvastatin levels",
+   "alcohol": "MEDIUM â€” liver toxicity risk",
+   "red yeast rice": "HIGH â€” dangerous combined statin effect"
+  },
+  "levothyroxine": {
+   "soy": "HIGH â€” reduces levothyroxine absorption by up to 30%",
+   "calcium": "HIGH â€” binds levothyroxine â€” take 4 hours apart",
+   "iron": "HIGH â€” blocks levothyroxine absorption completely",
+   "fibre": "MEDIUM â€” reduces absorption if taken together",
+   "walnuts": "MEDIUM â€” inhibits levothyroxine absorption",
+   "coffee": "MEDIUM â€” reduces absorption â€” take on empty stomach",
+   "milk": "MEDIUM â€” calcium in milk reduces absorption"
+  },
+  "carbimazole": {
+   "iodine": "HIGH â€” iodine worsens hyperthyroidism being treated",
+   "seaweed": "HIGH â€” very high iodine content â€” dangerous with carbimazole"
+  },
+  "warfarin": {
+   "vitamin k": "HIGH â€” vitamin K directly counteracts warfarin anticoagulation",
+   "grapefruit": "HIGH â€” alters warfarin metabolism dangerously",
+   "cranberry": "HIGH â€” significantly increases bleeding risk",
+   "alcohol": "HIGH â€” increases bleeding risk severely",
+   "fish oil": "MEDIUM â€” omega-3 has additional blood thinning effect",
+   "garlic": "MEDIUM â€” natural blood thinner â€” enhances warfarin effect",
+   "ginger": "MEDIUM â€” mild blood thinning â€” enhances warfarin"
+  },
+  "aspirin": {
+   "alcohol": "HIGH â€” increases gastrointestinal bleeding risk severely",
+   "fish oil": "MEDIUM â€” combined blood thinning effect â€” bleeding risk",
+   "garlic": "MEDIUM â€” enhanced blood thinning"
+  },
+  "clopidogrel": {
+   "alcohol": "HIGH â€” increased bleeding risk",
+   "grapefruit": "MEDIUM â€” may reduce clopidogrel effectiveness",
+   "fish oil": "MEDIUM â€” enhanced blood thinning effect"
+  },
+  "ciprofloxacin": {
+   "calcium": "HIGH â€” calcium blocks ciprofloxacin absorption completely",
+   "iron": "HIGH â€” iron blocks antibiotic absorption",
+   "milk": "MEDIUM â€” dairy reduces antibiotic absorption",
+   "caffeine": "HIGH â€” ciprofloxacin dramatically increases caffeine levels"
+  },
+  "amoxicillin": {
+   "alcohol": "MEDIUM â€” reduces antibiotic effectiveness and increases side effects"
+  },
+  "azithromycin": {
+   "alcohol": "MEDIUM â€” reduces effectiveness, increases liver stress",
+   "antacids": "MEDIUM â€” aluminium antacids reduce azithromycin absorption"
+  },
+  "doxycycline": {
+   "milk": "HIGH â€” dairy completely blocks doxycycline absorption",
+   "calcium": "HIGH â€” calcium binds doxycycline â€” take 2 hours apart",
+   "iron": "HIGH â€” iron blocks absorption",
+   "alcohol": "MEDIUM â€” reduces effectiveness"
+  },
+  "metronidazole": {
+   "alcohol": "HIGH â€” causes severe vomiting, flushing, rapid heartbeat"
+  },
+  "omeprazole": {
+   "alcohol": "MEDIUM â€” alcohol worsens acid reflux condition being treated",
+   "caffeine": "MEDIUM â€” caffeine increases acid production",
+   "iron": "MEDIUM â€” omeprazole reduces iron absorption"
+  },
+  "pantoprazole": {
+   "alcohol": "MEDIUM â€” worsens acid reflux",
+   "caffeine": "MEDIUM â€” increases acid production"
+  },
+  "ranitidine": {
+   "alcohol": "MEDIUM â€” increases alcohol blood levels dangerously",
+   "caffeine": "MEDIUM â€” worsens acid condition"
+  },
+  "sertraline": {
+   "alcohol": "HIGH â€” dangerous CNS depression, increased suicidal risk",
+   "caffeine": "MEDIUM â€” increased anxiety and jitteriness",
+   "grapefruit": "MEDIUM â€” may increase sertraline blood levels"
+  },
+  "fluoxetine": {
+   "alcohol": "HIGH â€” dangerous CNS depression",
+   "caffeine": "MEDIUM â€” worsens anxiety side effects",
+   "grapefruit": "MEDIUM â€” increases fluoxetine levels"
+  },
+  "alprazolam": {
+   "alcohol": "HIGH â€” fatal respiratory depression risk",
+   "caffeine": "MEDIUM â€” counteracts anti-anxiety effect",
+   "grapefruit": "HIGH â€” dramatically increases alprazolam blood levels"
+  },
+  "ibuprofen": {
+   "alcohol": "HIGH â€” severe gastrointestinal bleeding risk",
+   "caffeine": "MEDIUM â€” caffeine enhances ibuprofen effect â€” monitor dose"
+  },
+  "paracetamol": {
+   "alcohol": "HIGH â€” alcohol + paracetamol causes severe liver damage"
+  },
+  "diclofenac": {
+   "alcohol": "HIGH â€” gastrointestinal bleeding risk",
+   "sodium": "MEDIUM â€” high sodium worsens fluid retention side effect"
+  }
+ }
+}

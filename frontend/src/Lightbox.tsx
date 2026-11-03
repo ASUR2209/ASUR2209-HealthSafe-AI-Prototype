@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { hasApi, ingredientRisks, norm, type Result } from "./api";
+import { ingredientRisks, norm, type Result } from "./api";
 import { pretty } from "./data";
 import { SrOnly } from "./a11y";
 
@@ -58,7 +58,7 @@ export function Lightbox({ result, running }: { result: Result | null; running: 
         </h2>
         <span className="lb-meta">
           {ings.length} ingredients · {result.source === "photo" ? "read from label photo" : result.source === "barcode" ? "from barcode" : "typed"}
-          {result.demo && <em className="lb-demo"> · demo engine{hasApi ? ", backend offline" : ""}</em>}
+          {result.demo && <em className="lb-demo"> · demo engine, backend offline</em>}
         </span>
         <div className="lb-view" role="group" aria-label="Results view">
           <button type="button" aria-pressed={view === "gel"} onClick={() => setView("gel")}>
@@ -146,7 +146,7 @@ export function Lightbox({ result, running }: { result: Result | null; running: 
                     </SrOnly>
                   </>
                 ) : (
-                  <span className="smear-empty">{result.demo ? (hasApi ? "Start the Flask API to run the classifier" : "Runs with the Python backend only") : "Not returned by this endpoint"}</span>
+                  <span className="smear-empty">{result.demo ? "Start the Flask API to run the classifier" : "Not returned by this endpoint"}</span>
                 )}
               </div>
             </div>
