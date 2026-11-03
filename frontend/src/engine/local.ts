@@ -19,9 +19,23 @@ const fail = (status: number, data: any): Res => ({ status, data });
 let model: Promise<SafetyModel> | null = null;
 export const getModel = () => (model ??= loadModel(`${import.meta.env.BASE_URL}engine/model.json`));
 
-const OFF = "https://world.openfoodfacts.org";
-// Same 10 s limit as the backend's requests calls, so a slow Open Food Facts can't hang a scan.
-const offFetch = (url: string) => fetch(url, { signal: AbortSignal.timeout(10_000) });
+// Open Food Facts rate-limits per client and the hosts throttle separately, so if the main
+// host fails or times out, retry the same request on a country mirror (same database).
+const OFF_HOSTS = ["https://world.openfoodfacts.org", "https://in.openfoodfacts.org"];
+async function offFetch(path: string): Promise<Response> {
+  let last: unknown;
+  for (const host of OFF_HOSTS) {
+    try {
+      const res = await fetch(host + path, { signal: AbortSignal.timeout(8_000) });
+      // 404 is a real answer ("no such product"), not an outage.
+      if (res.ok || res.status === 404) return res;
+      last = new Error(`Open Food Facts returned ${res.status}`);
+    } catch (e) {
+      last = e;
+    }
+  }
+  throw last;
+}
 
 export async function localFetch(path: string, init?: RequestInit): Promise<Res> {
   const method = (init?.method ?? "GET").toUpperCase();
@@ -91,7 +105,7 @@ async function ocrAnalyze(data: any): Promise<Res> {
 async function lookupBarcode(barcode: string) {
   let data: any;
   try {
-    const res = await offFetch(`${OFF}/api/v0/product/${encodeURIComponent(barcode)}.json`);
+    const res = await offFetch(`/api/v0/product/${encodeURIComponent(barcode)}.json`);
     data = await res.json();
   } catch {
     return { success: false, error: "Request timed out — check internet connection" };
@@ -191,7 +205,7 @@ async function searchAlternatives(category: string, max = 100): Promise<any[]> {
       fields: "product_name,brands,ingredients_text,ingredients_text_en,nutriscore_grade,nutriments",
       page_size: String(max),
     });
-    const res = await offFetch(`${OFF}/api/v2/search?${q}`);
+    const res = await offFetch(`/api/v2/search?${q}`);
     if (res.ok) {
       for (const p of (await res.json()).products ?? []) {
         const ing = (p.ingredients_text_en || p.ingredients_text || "").trim();
