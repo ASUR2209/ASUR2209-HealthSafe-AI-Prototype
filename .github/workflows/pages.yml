@@ -32,8 +32,8 @@ jobs:
         env:
           # Pages serves this repo from /<repo-name>/.
           BASE_PATH: /${{ github.event.repository.name }}/
-          # Optional: set a repository variable named VITE_API_URL to a hosted
-          # Flask backend to enable the model, OCR, barcode and household features.
+          # Optional: set a repository variable named VITE_API_URL to use a hosted
+          # Flask backend. Without it, src/engine/ runs everything in the browser.
           VITE_API_URL: ${{ vars.VITE_API_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
